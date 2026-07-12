@@ -63,7 +63,7 @@ local browser     = "firefox"
 hl.on("hyprland.start", function ()
 --   hl.exec_cmd(terminal)
 --   hl.exec_cmd("nm-applet")
-    hl.exec_cmd("easyeffects", { workspace = "7" })
+    hl.exec_cmd("easyeffects", { workspace = "7 silent" })
     hl.exec_cmd("noctalia")
 end)
 
@@ -318,7 +318,7 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Switch to a submap called `resize`.
-hl.bind("ALT + R", hl.dsp.submap("resize"))
+hl.bind(mainMod .. " + R", hl.dsp.submap("resize"))
 
 -- Start a submap called "resize".
 hl.define_submap("resize", function()
