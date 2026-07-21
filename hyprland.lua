@@ -48,7 +48,7 @@ hl.monitor({
 local terminal    = "kitty"
 local fileManager = "dolphin"
 -- local menu        = "hyprlauncher"
-local browser     = "firefox"
+local browser     = "zen-browser"
 
 
 -------------------
@@ -355,6 +355,9 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
+-- Screenshots
+hl.bind(mainMod .. "+ SHIFT + X", hl.dsp.exec_cmd('grim - | satty -f - --copy-command wl-copy -o "~/Pictures/Screenshots/%Y%m%d_%H%M%S.png"'))
+
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
@@ -433,8 +436,8 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume-mute"))
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness-up"))
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"))
 
--- Other Binds
-hl.bind(mainMod .. "+ SHIFT + X", hl.dsp.exec_cmd(ipc .. "screenshot-region"))
+-- Other Binds // USE SATTY INSTEAD (SETUP IN THE HYPRLAND KEYBINDINGS)
+-- hl.bind(mainMod .. "+ SHIFT + X", hl.dsp.exec_cmd(ipc .. "screenshot-region"))
 
 -- Noctalia Settings
 hl.window_rule({
