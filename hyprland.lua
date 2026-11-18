@@ -64,6 +64,7 @@ hl.on("hyprland.start", function ()
 --   hl.exec_cmd(terminal)
 --   hl.exec_cmd("nm-applet")
     hl.exec_cmd("easyeffects", { workspace = "7 silent" })
+    hl.exec_cmd("fcitx5")
     hl.exec_cmd("noctalia")
 end)
 
@@ -246,7 +247,8 @@ hl.config({
 
         follow_mouse = 1,
 
-        sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
+        accel_profile = "flat",
+        sensitivity = -0.5, -- -1.0 - 1.0, 0 means no modification.
 
         touchpad = {
             natural_scroll = false,
@@ -336,7 +338,7 @@ end)
 
 hl.config({
     input =  {
-	kb_layout = "us,br",
+	kb_layout = "us,br,cn",
 	kb_options = "grp:alt_shift_toggle"
     }
 })
